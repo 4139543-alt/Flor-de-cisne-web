@@ -1,0 +1,1296 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #c98f7a;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("St-Regis.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.main-header {
+    background-color:var(--white);
+    box-shadow:var(--shadow-subtle);
+    position:sticky; /*posicion fija*/
+    top: 0 ;/*alineado al borde superior*/
+    z-index: 100px; /*permite de superposición*/
+}
+.poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: auto;
+  min-height: unset;
+  padding: 5px 0;
+}
+
+/* =====================================================
+   2. PÁGINAS INTERNAS 
+   ===================================================== */
+.promo {
+  width: 560px;
+  max-width: 100%;
+  padding: 35px;
+  text-align: center;
+  color: white;
+  background: rgba(47, 190, 159, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 11px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.promo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.3);
+}
+
+.etiqueta { font-size: 12px; letter-spacing: 6px; opacity: 0.85; }
+
+.titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.05;
+  margin-top: 10px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+.titulo span { display: block; font-size: 22px; letter-spacing: 12px; margin-top: 8px; }
+
+.promo hr { width: 80px; border: none; border-top: 1.5px solid white; margin: 18px auto; }
+.descripcion { font-size: 15px; line-height: 1.7; }
+
+.boton{
+  /* Fondo oscuro semitransparente o negro */
+  background-color: rgb(23, 23, 24); 
+  
+  /* Borde dorado fino */
+  border: 1.5px solid #d4af37; 
+  
+  /* Forma de cápsula/píldora */
+  border-radius: 50px; 
+  
+  /* Texto e ícono dorados */
+  color: #d4af37;
+  
+  /* Tamaño y espaciado interno */
+  padding: 8px 24px;
+  font-size: 16px;
+  font-family: sans-serif;
+  
+  /* Alineación del texto y la flecha */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  
+  cursor: pointer;
+  
+  /* Transición suave para el efecto hover */
+  transition: all 0.3s ease;
+}
+
+/* Espaciado de la flecha */
+.boton .flecha {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.boton:hover {
+  background-color: #d4af37; /* El fondo se llena de dorado */
+  color: #fffcfc  ;     /* El texto pasa a ser negro */
+  border-color: #d4af37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4); /* Resplandor dorado tenue */
+}
+
+/* Animación opcional: la flecha se mueve un poco a la izquierda al hacer hover */
+.boton:hover .flecha {
+  transform: translateX(-3px);
+}
+
+.promo-pagina {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  align-self: stretch;
+  text-align: left;
+  padding: 30px 40px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+
+.promo-pagina:hover { transform: none; box-shadow: none; }
+.promo-pagina .etiqueta,
+.promo-pagina .titulo,
+.promo-pagina .descripcion { text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); }
+
+.encabezado {
+  position: relative;
+  display: flex;
+  justify-content: center;   /* centra el título en la pantalla */
+  align-items: flex-start;
+  min-height: 200px;         /* alto del logo, para que el hr no se suba */
+}
+
+.GALERIA {
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: 3.8rem !important; /* <--- Aumenta este número para que sea más grande */
+  font-weight: 300 !important;
+  color: #ffffff !important;
+  letter-spacing: 2px;
+  text-align: center;
+
+  margin-top: 50px !important; /* Si al crecer se desplaza, ajusta este margen */
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.logo-img {
+  position: absolute;        /* el logo ya no empuja al título */
+  left: 0;
+  top: 0;
+  width: 200px;    /*tamaño logo*/
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.promo-pagina .titulo {
+  font-size: 60px;
+  margin: 0;
+  margin-top: 50px;    /*sube o baja el titulo de los apartados*/
+  text-align: center;
+}
+
+.promo-pagina hr { width: 100%; margin: 24px 0; }
+.promo-pagina .descripcion { font-size: 16px; }
+
+.boton-volver {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  margin-top: 50px;          /*Sube o baja el boton de volver*/
+  padding: 14px 34px;
+  font-size: 16px;
+  z-index: 10;            
+}
+
+.descripcion-contenedor, .footer-contenedor { overflow: hidden; width: 100%; }
+
+.descripcion-animada {
+  display: block;
+  text-align: center;         /* Centra el texto */
+  margin: 0 auto;             /* Centra el bloque en el contenedor */
+  max-width: 90%;             /* Evita que toque los bordes en pantallas chicas */
+  color: #fff;
+  opacity: 0;
+  animation: zoom-out-fade 6s ease-in-out infinite;
+}
+
+@keyframes zoom-out-fade {
+  /* Entrada: Empieza un poco más grande y se acerca suavemente */
+  0% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Permanencia: Se mantiene perfectamente visible */
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Salida: Se aleja hacia el fondo mientras se desvanece */
+  100% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+.footer-animado {
+  display: inline-block; white-space: nowrap; color: #fff; opacity: 1;
+  font-weight: 600; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  animation: deslizar-footer 30s linear infinite;
+}
+@keyframes deslizar-footer {
+  0%   { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+.main-footer { background: rgba(0, 0, 0, 0.5); padding: 14px 0; }
+
+/* =====================================================
+   3. GALERÍA / HABITACIONES / ALBERCAS /MENÚ (tarjetas)
+   ===================================================== */
+.galeria-habitaciones,
+.lista-habitaciones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.tarjeta-habitacion {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.img-habitacion {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+.info-habitacion { 
+  padding: 16px; 
+}
+.info-habitacion h2 { 
+  font-family: 'Playfair Display', serif; font-weight: 400; margin-bottom: 6px; 
+}
+.detalles-habitacion { 
+  font-size: .85rem; opacity: .85; margin-bottom: 8px; 
+}
+.desc-corta { 
+  font-size: .9rem; line-height: 1.5; margin-bottom: 14px; 
+}
+.precio-reserva { 
+  display: flex; justify-content: space-between; align-items: center; gap: 10px; 
+}
+.precio { 
+  font-weight: 600; 
+}
+
+body.body-habitaciones {
+  background-color: #1a2f3b;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkBNnQgbKHqYsQL2wlw4Anr12h_kqTwNxinQVvKV6TuEl6w5M19knKfwG&s=10");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.body-albercas {
+  background-color: #1a2f3b;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("St-Regis.jpg");   /* pon aquí la foto de albercas */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* =====================================================
+   4. PÁGINA DE RESERVA (reserva.html)
+   ===================================================== */
+.seccion-reserva { max-width: 600px; margin: 30px auto; padding: 0 16px; color: #fff; }
+.form-reserva {
+  display: flex; flex-direction: column; gap: 8px;
+  background: rgba(60, 150, 120, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 24px; border-radius: 16px;
+}
+.form-reserva label { font-weight: 600; margin-top: 8px; }
+.form-reserva input,
+.form-reserva select,
+.form-reserva textarea {
+  padding: 10px; border: 1px solid #ccc; border-radius: 8px;
+  font-family: inherit; font-size: 1rem;
+}
+.form-reserva button { margin-top: 16px; padding: 12px; cursor: pointer; border: 0; }
+
+/* =====================================================
+   5. PORTADA NUEVA (index.html -> <body class="inicio">)
+   ===================================================== */
+body.inicio {
+  --teal: #17b3a0;
+  --hero: url("haha.jpg");   /* tu foto de fondo actual */
+
+  min-height: 100vh;
+  color: #fff;
+  background-color: #06201d;
+  background-image:
+    linear-gradient(180deg, rgba(0,20,18,.55), rgba(0,20,18,.35) 60%, rgba(0,20,18,.7)),
+    var(--hero);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.inicio a { color: inherit; text-decoration: none; }
+
+/* Barra superior */
+.inicio nav { display: 
+  flex; align-items: 
+  center; justify-content: 
+  space-between; gap: 5px; 
+  padding: 10px 1vw; position: 
+  relative; z-index: 1; }
+
+.inicio .menu { 
+  display: 
+  flex; align-items: 
+  center; gap: 28px; 
+  font-size: .88rem; 
+  font-weight: 600; }
+
+.inicio .menu > li { list-style: none; }
+
+.inicio .btn-res { 
+  padding: 10px 22px;
+   border-radius: 8px;
+    background: rgba(255,255,255,.22); 
+    border: 1px solid rgba(255,255,255,.35); }
+
+.inicio .btn-res:hover { 
+  background: rgba(255,255,255,.35); }
+
+.inicio .burger {
+   display: none; 
+   background: none; 
+   border: 0;
+    color: #fff; 
+    font-size: 1.6rem; 
+    cursor: pointer; }
+
+/* Portada */
+.inicio .hero { 
+  display: grid; 
+  grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); 
+  gap: 30px; 
+  align-items: center; 
+  padding: 6vh 5vw 40px;
+   min-height: 78vh; }
+
+.inicio .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.15; margin-bottom: 16px;  margin-top: 55px !important; /* <--- AGREGA ESTA LÍNEA para bajar el texto */}
+.inicio .hero h1 b { font-weight: 600; }
+.inicio .hero p { max-width: 440px; line-height: 1.6; font-size: .95rem; opacity: .92; }
+
+/* Tarjetas */
+.inicio .carrusel { display: flex; gap: 18px; overflow-x: auto; padding: 6px 4px 16px; scroll-snap-type: x mandatory; }
+.inicio .card {
+  flex: 0 0 200px; height: 320px; border-radius: 14px;
+  scroll-snap-align: start; position: relative; overflow: hidden;
+  background-size: cover; background-position: center;
+  background-image: linear-gradient(0deg, rgba(0,0,0,.65), transparent 55%), var(--img, none), var(--fb);
+  box-shadow: 0 10px 26px rgba(0,0,0,.4);
+  transition: transform .25s;
+}
+.inicio .card:hover { transform: translateY(-6px); }
+.inicio .card span { position: absolute; left: 14px; right: 14px; bottom: 14px; font-family: 'Playfair Display', serif; font-size: 1.3rem; }
+.inicio .card small { display: block; font: 400 .72rem Poppins, sans-serif; opacity: .85; margin-top: 2px; }
+
+/* Contacto */
+.inicio #contacto { text-align: center; padding: 30px 5vw 40px; font-size: .9rem; line-height: 1.8; background: rgba(0,0,0,.3); }
+.inicio #contacto h2 { font-family: 'Playfair Display', serif; font-weight: 400; margin-bottom: 6px; }
+
+/* =====================================================
+   6. CELULAR
+   ===================================================== */
+@media (max-width: 600px) {
+  .titulo { font-size: 38px; }
+  .titulo span { font-size: 16px; letter-spacing: 8px; }
+  .descripcion { font-size: 13px; }
+  .promo { padding: 28px 22px; }
+  .promo-pagina { padding: 28px 20px; }
+  .encabezado { flex-direction: column; gap: 14px; text-align: center; }
+  .promo-pagina .titulo { font-size: 38px; }
+  .boton-volver { top: 10px; right: 10px; }
+  .galeria-habitaciones, .lista-habitaciones { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 820px) {
+  .inicio .burger { display: block; }
+  .inicio .menu { display: none; position: absolute; top: 100%; left: 5vw; right: 5vw; flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px; border-radius: 12px; background: rgba(6,32,29,.96); }
+  .inicio .menu.abierto { display: flex; }
+  .inicio .hero { grid-template-columns: 1fr; min-height: auto; }
+}
+
+/* Fondo exclusivo para la página de albercas */
+body.body-albercas {
+  background-color: #1a2f3b; /* Color de respaldo */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("yamequieroirrrrr.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Fondo exclusivo para la página de terrazas */
+body.body-terrazas {
+  background-color: #1a2f3b; /* Color de respaldo */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("2\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  /* Mantiene la imagen estática al hacer scroll */
+  background-attachment: fixed; 
+
+  /* Mantiene la nitidez al escalar */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Fondo exclusivo para la página de habitaciones */
+body.body-habitaciones {
+  background-color: #1a2f3b; /* Color de respaldo */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("abi.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  /* Mantiene la imagen estática al hacer scroll */
+  background-attachment: fixed; 
+
+  /* Mantiene la nitidez al escalar */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Sección principal del pie de página */
+.seccion-contacto {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 30px 50px;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.seccion-contacto h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Fila Superior: Distribución en dos columnas */
+.contacto-contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.columna-contacto p,
+.redes-fila p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.columna-izquierda {
+  text-align: left;
+}
+
+.columna-derecha {
+  text-align: right;
+}
+
+/* Fila Inferior: Redes sociales alineadas horizontalmente */
+.redes-fila {
+  display: flex;
+  justify-content: center; /* Centradas horizontalmente */
+  gap: 35px;               /* Espacio horizontal entre cada red */
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria muy suave */
+}
+
+/* Adaptabilidad para teléfonos móviles */
+@media (max-width: 768px) {
+  .contacto-contenedor,
+  .redes-fila {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .columna-izquierda,
+  .columna-derecha {
+    text-align: center;
+  }
+}
+
+/* =====================================================
+   4. PÁGINA DE RESERVA (reservas.html) - EXACTO A LA IMAGEN
+   ===================================================== */
+
+/* Fondo verde esmeralda para reservas.html */
+body.body-reservas {
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("hil.png");
+
+  /* Agrega estas 4 líneas aquí abajo: */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+/* Tarjeta principal contenedora */
+/* Tarjeta extra transparente */
+.reserva-card {
+  width: 100%;
+  max-width: 540px;
+  /* Reducimos la opacidad a 0.12 para que sea muy transparente */
+  background: rgba(0, 0, 0, 0.12); 
+  /* Mantenemos un desenfoque ligero para que el texto se siga leyendo */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  /* Un borde un poco más marcado para que se siga notando la forma del cuadro */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 28px;
+  padding: 40px 38px 30px 38px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+
+/* Encabezados */
+.reserva-subtitle {
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.reserva-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.7rem;
+  font-weight: 400;
+  margin-bottom: 4px;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.reserva-category {
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 26px;
+  opacity: 0.9;
+}
+
+/* Formulario */
+.reserva-form-group {
+  margin-bottom: 15px;
+}
+
+.reserva-form-row {
+  display: flex;
+  gap: 14px;
+}
+
+.reserva-form-row .reserva-form-group {
+  flex: 1;
+}
+
+.reserva-card label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin-bottom: 7px;
+  color: #ffffff;
+}
+
+/* Inputs con fondo gris/hueso exacto */
+.reserva-card input,
+.reserva-card select,
+.reserva-card textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ebeeeedc;
+  font-size: 0.95rem;
+  color: #1a202c;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.reserva-card input:focus,
+.reserva-card select:focus,
+.reserva-card textarea:focus {
+  background-color: #ffffff;
+}
+
+.reserva-card textarea {
+  resize: vertical;
+  min-height: 85px;
+}
+
+.reserva-card select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%20111827' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+/* Cuadro con borde punteado */
+.reserva-info-box {
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  border-radius: 12px;
+  padding: 14px 18px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 18px;
+}
+
+/* Botón "Confirmar reserva" */
+.btn-confirmar-reserva {
+  width: 100%;
+  padding: 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.btn-confirmar-reserva:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Enlace Volver al inicio */
+.reserva-link-volver {
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.reserva-link-volver:hover {
+  opacity: 0.8;
+}
+
+/* Solo el logo del index */
+.inicio nav .logo-img {
+  position: absolute;
+  top: 0.5px;
+  left: 5vw;
+  width: 300px;
+  height: auto;
+}
+
+.inicio nav {
+  min-height: 90px;
+}
+
+/* Mantiene el menú a la derecha */
+.inicio nav .menu {
+  margin-left: auto;
+}
+
+@media (max-width: 820px) {
+  .inicio nav .logo-img {
+    width: 110px;
+    left: 20px;
+  }
+
+}
+
+/* Estilos para la sección de Contacto estilo Glassmorphism */
+.footer-contacto {
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
+  backdrop-filter: blur(8px); /* Efecto difuminado en el fondo */
+  border-top: 1px solid rgba(212, 175, 55, 0.4); /* Línea superior dorada */
+  color: #ffffff;
+  padding: 40px 20px 20px 20px;
+  margin-top: 60px;
+}
+
+.titulo-contacto {
+  text-align: center;
+  font-family: 'Playfair Display', serif, sans-serif;
+  color: #d4af37; /* Dorado */
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-columna {
+  flex: 1;
+  min-width: 240px;
+  text-align: center;
+}
+
+.footer-columna h3 {
+  color: #d4af37;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.footer-columna p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+.redes-links a {
+  display: block;
+  color: #e0e0e0;
+  text-decoration: none;
+  margin: 8px 0;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.redes-links a:hover {
+  color: #d4af37;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: #aaaaaa;
+}
+
+/* 1. Definimos el efecto de respiración */
+@keyframes respiracion {
+  0% {
+    transform: scale(1); /* Tamaño normal */
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.08); /* Se agranda un 8% */
+    opacity: 1;
+    color: #d4af37; /* Opcional: cambia a dorado al agrandarse */
+  }
+  100% {
+    transform: scale(1); /* Vuelve al tamaño normal */
+    opacity: 0.8;
+  }
+}
+
+/* 2. Aplicamos el efecto al texto dentro de footer-copy */
+.footer-copy p {
+  display: inline-block; /* Requerido para que el transform scale funcione correctamente */
+  animation: respiracion 3s infinite ease-in-out; /* Dura 3 segundos y se repite para siempre */
+}
+
+/* Ampliamos la tarjeta para que ocupe casi toda la pantalla */
+.tarjeta-contenedor {
+  width: 92% !important;
+  max-width: 1100px !important;    /* Permite extenderse horizontalmente */
+  max-height: none !important;      /* Elimina el límite de altura */
+  height: auto !important;
+  overflow: visible !important;     /* Quita la barra de scroll vertical */
+  margin: 40px auto !important;
+  padding: 40px 35px !important;
+  background: rgba(20, 20, 20, 0.70) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Distribuimos las secciones en cuadrícula (dos columnas espaciosas) */
+.bloque-horarios {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* Separa los horarios en 2 columnas */
+  gap: 25px 40px !important;                       /* Espaciado amplio entre cajas */
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+/* Ocultamos las líneas divisoras antiguas */
+.linea-divisora {
+  display: none !important;
+}
+
+/* Estilo para cada tarjeta de servicio */
+.item-servicio {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 3px solid #d4af37; /* Detalle elegante en dorado */
+}
+
+/* Estructura para el formulario en la parte inferior */
+.form-reserva {
+  max-width: 700px !important;
+  margin: 0 auto !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.4);
+  padding-top: 30px;
+}
+
+/* =========================================================
+   PARCHE PARA RESETEAR NAVEGACIÓN Y TÍTULOS SUPERIORES
+   ========================================================= */
+
+/* Forzamos a que nada arriba tenga position: absolute */
+.tarjeta-contenedor *,
+.btn-volver,
+.subtitulo-bienvenida,
+.logo-titulo,
+.titulo-seccion,
+.btn-reserva {
+  position: static !important;
+  display: block !important;
+  float: none !important;
+}
+
+.btn-volver {
+  display: inline-block !important;
+  color: #d4af37 !important;
+  text-decoration: none !important;
+  margin-bottom: 15px !important;
+}
+
+.subtitulo-bienvenida {
+  font-size: 0.8rem !important;
+  letter-spacing: 3px !important;
+  margin: 0 0 5px 0 !important;
+  text-align: center !important;
+  color: #cccccc !important;
+}
+
+.logo-titulo {
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: 2.6rem !important;
+  font-weight: 300 !important;
+  margin: 0 0 5px 0 !important;
+  text-align: center !important;
+  color: #ffffff !important;
+}
+
+.titulo-seccion {
+  font-size: 0.95rem !important;
+  letter-spacing: 2px !important;
+  margin: 0 0 20px 0 !important;
+  text-align: center !important;
+  color: #d4af37 !important;
+}
+
+.btn-reserva {
+  display: inline-block !important;
+  padding: 8px 18px !important;
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border-radius: 20px !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  font-weight: bold !important;
+  margin: 10px auto 25px auto !important;
+  width: fit-content !important;
+  text-align: center !important;
+}
+
+/* =========================================================
+   CÓDIGO UNIFICADO COMPLETO (FONDO DE PÁGINA + TARJETA NEGRA)
+   ========================================================= */
+
+/* 1. Fondo general (afecta únicamente a las páginas que usen <body class="body-reservas">) */
+body.body-horarios {
+  margin: 0 !important;
+  padding: 0 !important;
+  /* La imagen va aquí afuera de la tarjeta */
+  background-image: url('hol.png') !important; 
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  
+  /* Centra la tarjeta en la pantalla */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 100vh !important;
+}
+
+/* 2. Tarjeta principal (se mantiene oscura por dentro) */
+.tarjeta-contenedor {
+  width: 92% !important;
+  max-width: 1000px !important;
+  margin: 40px auto !important;
+  padding: 40px 35px !important;
+  
+  /* Fondo negro/oscuro de la tarjeta */
+  background: rgba(20, 20, 20, 0.90) !important; 
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* 3. Botón Volver al Menú */
+.tarjeta-contenedor .btn-volver {
+  position: relative !important;
+  display: inline-block !important;
+  color: #d4af37 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 25px !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+}
+
+/* 4. Títulos centrados */
+.tarjeta-contenedor .subtitulo-bienvenida {
+  position: static !important;
+  display: block !important;
+  text-align: center !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 3px !important;
+  color: #cccccc !important;
+  margin: 0 0 5px 0 !important;
+}
+
+.tarjeta-contenedor .logo-titulo {
+  position: static !important;
+  display: block !important;
+  text-align: center !important;
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: 2.8rem !important;
+  font-weight: 300 !important;
+  color: #ffffff !important;
+  margin: 0 0 5px 0 !important;
+  line-height: 1.1 !important;
+}
+
+.tarjeta-contenedor .titulo-seccion {
+  position: static !important;
+  display: block !important;
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 2px !important;
+  color: #d4af37 !important;
+  margin: 0 0 20px 0 !important;
+}
+
+.tarjeta-contenedor .btn-reserva {
+  position: static !important;
+  display: table !important;
+  margin: 0 auto 30px auto !important;
+  padding: 10px 24px !important;
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border-radius: 20px !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
+/* 5. Cuadrícula de 2 columnas */
+.tarjeta-contenedor .bloque-horarios {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 25px !important;
+  margin: 30px 0 35px 0 !important;
+}
+
+/* 6. Ocultar líneas divisoras viejas */
+.tarjeta-contenedor .linea-divisora {
+  display: none !important;
+}
+
+/* 7. Tarjetas de servicios internas */
+.tarjeta-contenedor .bloque-horarios > div,
+.tarjeta-contenedor .item-servicio {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 12px !important;
+  border-left: 4px solid #d4af37 !important;
+  padding: 25px 25px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+.tarjeta-contenedor .bloque-horarios h3 {
+  margin-bottom: 12px !important;
+  line-height: 1.3 !important;
+}
+
+.tarjeta-contenedor .bloque-horarios p {
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+}
+
+/* Horas suaves */
+.tarjeta-contenedor .bloque-horarios strong,
+.tarjeta-contenedor .bloque-horarios b {
+  font-weight: normal !important;
+  color: #dddddd !important;
+}
+
+/* =========================================================
+   7. FORMULARIO DE RESERVA PREMIUM
+   ========================================================= */
+
+/* Contenedor del Formulario */
+.tarjeta-contenedor form,
+.tarjeta-contenedor .seccion-reserva,
+.tarjeta-contenedor [class*="formulario"] {
+  background: rgba(15, 35, 25, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 16px !important;
+  padding: 30px !important;
+  margin-top: 40px !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Título del Formulario */
+.tarjeta-contenedor form h2,
+.tarjeta-contenedor form h3,
+.tarjeta-contenedor .seccion-reserva h2 {
+  color: #ffffff !important;
+  font-size: 1.4rem !important;
+  margin-bottom: 20px !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+  padding-bottom: 10px !important;
+}
+
+/* Etiquetas (Labels) */
+.tarjeta-contenedor form label {
+  display: block !important;
+  color: #d4af37 !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  margin: 15px 0 6px 0 !important;
+}
+
+/* Inputs y Selects a ancho completo con estilo elegante */
+.tarjeta-contenedor form input[type="text"],
+.tarjeta-contenedor form input[type="email"],
+.tarjeta-contenedor form select {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 12px 15px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  color: #111111 !important;
+  font-size: 0.95rem !important;
+  outline: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.tarjeta-contenedor form input:focus,
+.tarjeta-contenedor form select:focus {
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Botón de Enviar Reserva */
+.tarjeta-contenedor form button,
+.tarjeta-contenedor form input[type="submit"] {
+  display: block !important;
+  width: 100% !important;
+  margin-top: 25px !important;
+  padding: 14px !important;
+  background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%) !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 1px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.tarjeta-contenedor form button:hover,
+.tarjeta-contenedor form input[type="submit"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4) !important;
+}
+
+/* 8. Celulares (1 columna) */
+@media (max-width: 700px) {
+  .tarjeta-contenedor .bloque-horarios {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   DETALLES FINALES Y EFECTOS INTERACTIVOS
+   ========================================================= */
+
+/* 1. Desplazamiento suave al hacer clic en el botón de reserva */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Efecto Hover en las tarjetas de servicio */
+.tarjeta-contenedor .item-servicio {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.tarjeta-contenedor .item-servicio:hover {
+  transform: translateY(-3px) !important;
+  border-left-color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* 3. Estilo elegante para el selector (Select) del formulario */
+.tarjeta-contenedor form select {
+  cursor: pointer !important;
+  background-color: #ffffff !important;
+}
+
+.tarjeta-contenedor form select option {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  padding: 10px !important;
+}
+
+/* 4. Feedback visual al presionar el botón de enviar */
+.tarjeta-contenedor form button:active {
+  transform: translateY(1px) !important;
+}
+
+/* =========================================================
+   DISTINCIÓN Y ESPACIADO CLARO PARA DÍAS Y HORARIOS
+   ========================================================= */
+
+/* Espacio más amplio entre las columnas de días */
+.tarjeta-contenedor .tabla-dias-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 20px !important;
+  margin-top: 15px !important;
+}
+
+.tarjeta-contenedor .col-dias {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important; /* Más aire vertical entre cada día */
+}
+
+/* Fila de cada día con separación visual */
+.tarjeta-contenedor .fila-dia {
+  display: flex !important;
+  flex-direction: column !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+  padding-bottom: 8px !important;
+}
+
+/* Nombre del día destacado (Lunes, Martes, etc.) */
+.tarjeta-contenedor .nombre-dia {
+  font-weight: 700 !important;
+  color: #d4af37 !important; /* Dorado para destacar el día */
+  font-size: 0.95rem !important; /* Letra más grande para el día */
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 4px !important;
+}
+
+/* Horas en un tono suave y bien separadas */
+.tarjeta-contenedor .horas-dia {
+  color: #eeeeee !important;
+  font-size: 0.78rem !important;
+  line-height: 1.4 !important;
+  padding-left: 4px !important;
+}
+
+.tarjeta-contenedor .status-cerrado {
+  color: #ff6b6b !important;
+  font-weight: bold !important;
+}
+
+
+/* 1. Convertir el contenedor en Grid a 2 columnas */
+.bloque-horarios {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+/* 2. Ocultar las líneas divisoras para que no estropeen la grilla */
+.bloque-horarios > hr,
+.bloque-horarios > .linea-divisora {
+  display: none !important;
+}
+
+/* 3. Forzar a la 3ra tarjeta (Atención al Huésped) a estirarse de lado a lado */
+.bloque-horarios > .item-servicio:nth-of-type(3) {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 4. Acomodar el texto interno de esa 3ra tarjeta a lo ancho */
+.bloque-horarios > .item-servicio:nth-of-type(3) .tabla-dias-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 30px !important;
+}

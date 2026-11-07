@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Cuenta · Flor de Cisne</title>
+  <!-- Tu único archivo de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="body-reservas">
+
+  <div class="reserva-card">
+    <div class="reserva-subtitle">BIENVENIDO A</div>
+    <h1 class="reserva-title">Flor de Cisne</h1>
+    <div class="reserva-category">CREAR CUENTA</div>
+
+    <form action="#" method="POST">
+      <div class="reserva-form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required>
+      </div>
+
+      <div class="reserva-form-row">
+        <div class="reserva-form-group">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+        </div>
+        <div class="reserva-form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="12345678">
+        </div>
+      </div>
+
+      <div class="reserva-form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required>
+      </div>
+
+      <div class="reserva-form-group">
+        <label for="confirm-password">Confirmar contraseña</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn-confirmar-reserva">Registrarse</button>
+
+      <!-- Enlace conectado de regreso a login.html -->
+      <div style="text-align: center; margin-bottom: 18px; font-size: 0.9rem;">
+        <span>¿Ya tienes una cuenta? </span>
+        <a href="login.html" class="reserva-link-volver" style="display: inline;">Inicia sesión</a>
+      </div>
+
+      <a href="index.html" class="reserva-link-volver">&larr; Volver al inicio</a>
+    </form>
+  </div>
+
+</body>
+</html>

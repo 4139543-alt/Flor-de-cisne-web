@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Botón de regreso -->
+      <a href="index.html" class="boton boton-volver">← Volver</a>
+  <title>Reserva · HTML</title>
+
+  <!-- Tu único archivo de estilos -->
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="body-reservas">
+
+
+  <div class="reserva-card">
+    <div class="reserva-subtitle">BIENVENIDO A</div>
+    <h1 class="reserva-title">Flor de Cisne</h1>
+    <div class="reserva-category">RESERVAS</div>
+
+
+
+    <form action="#" method="POST">
+      <div class="reserva-form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre">
+      </div>
+
+
+
+      <div class="reserva-form-row">
+        <div class="reserva-form-group">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="correo">
+        </div>
+
+        <div class="reserva-form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono">
+        </div>
+
+      </div>
+
+
+
+      <div class="reserva-form-group">
+        <label for="opcion">¿Qué deseas reservar?</label>
+        <select id="opcion" name="opcion">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="mesa">Mesa</option>
+          <option value="evento">Evento</option>
+        </select>
+
+      </div>
+
+
+
+      <div class="reserva-form-group">
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha">
+      </div> 
